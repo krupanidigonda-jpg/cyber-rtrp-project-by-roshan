@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Fraud Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="otp-bg">
+
+<div class="box">
+
+<h2>OTP Fraud Simulation</h2>
+
+<p>
+You receive a call saying:  
+"Your bank account will be blocked. Share the OTP sent to your phone immediately."
+</p>
+
+<button onclick="wrongAction()">Share OTP</button>
+<button onclick="correctAction()">Refuse and Call Official Bank Number</button>
+
+<p id="result"></p>
+
+<button onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+function wrongAction(){
+    document.getElementById("result").innerText =
+    "Fraud Alert! Sharing OTP allows scammers to access your bank account.";
+    document.getElementById("result").style.color = "red";
+}
+
+function correctAction(){
+    document.getElementById("result").innerText =
+    "Correct! Never share OTP. Always verify with official bank number.";
+    document.getElementById("result").style.color = "green";
+}
+
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

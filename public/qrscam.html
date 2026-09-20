@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Scam Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="otp-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>📷 QR Code Scam Awareness</h2>
+    <p>A person says: “Scan this QR code to receive ₹5000 refund.”</p>
+
+    <button onclick="wrong()">📷 Scan QR to receive money</button>
+    <button onclick="correct()">🚫 Do not scan unknown QR codes</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        In QR code scams, fraudsters tell victims that scanning a QR code will help them receive money,
+        cashback, refund, or prize money. In reality, scanning a QR code is usually used to make a payment,
+        so the victim may lose money.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Scan QR codes only when you are making a payment yourself.</li>
+        <li>Verify the receiver name before completing payment.</li>
+        <li>Use trusted payment apps only.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not scan QR codes sent by unknown people.</li>
+        <li>Do not trust messages saying “scan to receive money”.</li>
+        <li>Do not enter UPI PIN unless you are sure you are paying.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Scanning a QR code is usually for paying money, not receiving it. This can cause financial loss.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Never scan QR codes sent by unknown people for refunds, rewards, or money receiving.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

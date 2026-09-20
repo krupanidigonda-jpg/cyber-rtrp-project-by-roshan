@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Access App Scam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>🖥️ Remote Access App Scam</h2>
+    <p>A caller asks you to install AnyDesk to “fix” your account problem.</p>
+
+    <button onclick="wrong()">⬇️ Install and share screen</button>
+    <button onclick="correct()">🛑 Refuse and contact official support</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        In remote access scams, fraudsters ask victims to install apps like AnyDesk or TeamViewer.
+        Once installed, the scammer can see and control the victim’s screen,
+        including banking and payment apps.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Contact official customer support directly.</li>
+        <li>Uninstall remote apps if installed by mistake.</li>
+        <li>Use antivirus and device lock protection.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not install remote access apps for unknown callers.</li>
+        <li>Do not share screen while using bank apps.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Remote access lets scammers control your phone and steal private data and financial access.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Never install remote access apps on instructions from unknown callers.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

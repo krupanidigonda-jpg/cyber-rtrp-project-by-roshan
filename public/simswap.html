@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIM Swap Fraud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="otp-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>📡 SIM Swap Fraud</h2>
+    <p>Your phone suddenly loses network and you get alerts of banking activity on email.</p>
+
+    <button onclick="wrong()">😴 Wait and ignore it</button>
+    <button onclick="correct()">📞 Contact telecom provider and bank immediately</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        In SIM swap fraud, attackers transfer the victim’s phone number to a new SIM card.
+        Once they control the number, they receive OTPs and can access bank accounts and other services.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Contact telecom operator immediately if network disappears unexpectedly.</li>
+        <li>Inform your bank and block suspicious transactions.</li>
+        <li>Enable strong account security measures.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not ignore sudden loss of network.</li>
+        <li>Do not delay contacting operator or bank.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! A sudden network loss can be a sign of SIM swap. Delay may lead to OTP theft and account takeover.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Contact your telecom operator and bank immediately to block misuse and secure accounts.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

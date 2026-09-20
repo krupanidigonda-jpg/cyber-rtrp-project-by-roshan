@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courier Scam Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spam-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>📦 Courier Scam Detection</h2>
+    <p>Message says: “Your parcel is stuck. Pay ₹49 now using this link.”</p>
+
+    <button onclick="wrong()">💳 Click and pay</button>
+    <button onclick="correct()">📦 Check official courier app/site directly</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Courier scams happen when victims receive messages saying a parcel is delayed or stuck.
+        The message asks for a small payment through a suspicious link.
+        That link usually steals banking details.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Track delivery only through official courier websites/apps.</li>
+        <li>Verify tracking ID directly on official site.</li>
+        <li>Ignore unknown payment links.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not pay through random courier links.</li>
+        <li>Do not enter card details on suspicious pages.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Small-payment courier scams often steal card data and banking details.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Use official courier website or app only. Never trust random payment links.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

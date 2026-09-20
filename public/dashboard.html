@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    🛡️ CYBER AWARE SECURITY SYSTEM ⚡
+</div>
+
+<div class="container">
+    <h1>🧠 Cyber Control Panel</h1>
+    <p>Select a cyber crime portal to learn and practice safely.</p>
+
+    <div class="portal-grid">
+        <button onclick="goPage('game.html')">🎮 Cyber Awareness Game</button>
+        <button onclick="goPage('otp.html')">📲 OTP Fraud Simulation</button>
+        <button onclick="goPage('spamcall.html')">📞 Spam Call Detection</button>
+        <button onclick="goPage('fakeprofile.html')">👮 Fake Police Profile Check</button>
+        <button onclick="goPage('morphing.html')">🖼️ Photo Morphing Awareness</button>
+        <button onclick="goPage('complaint.html')">🚨 Complaint Help</button>
+        <button onclick="goPage('leaderboard.html')">🏆 Leaderboard</button>
+
+        <button onclick="goPage('phishing.html')">🔗 Phishing Link Detector</button>
+        <button onclick="goPage('qrscam.html')">📷 QR Code Scam Awareness</button>
+        <button onclick="goPage('jobscam.html')">💼 Fake Job Offer Checker</button>
+        <button onclick="goPage('loanapp.html')">📱 Fake Loan App Fraud</button>
+        <button onclick="goPage('investment.html')">💰 Investment Scam Awareness</button>
+        <button onclick="goPage('deepfake.html')">🎭 Deepfake Scam Awareness</button>
+        <button onclick="goPage('courier.html')">📦 Courier Scam Detection</button>
+        <button onclick="goPage('supportscam.html')">☎️ Fake Support Number Scam</button>
+        <button onclick="goPage('remoteaccess.html')">🖥️ Remote Access App Scam</button>
+        <button onclick="goPage('simswap.html')">📡 SIM Swap Fraud</button>
+        <button onclick="goPage('marketplace.html')">🛒 Marketplace Scam Awareness</button>
+        <button onclick="goPage('gaming.html')">🎮 Online Gaming Scam</button>
+    </div>
+
+    <br>
+    <button onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="footer">
+    © 2026 Cyber Aware | Developed by Group 2 🚀
+</div>
+
+<script>
+function goPage(page){
+    window.location.href = page;
+}
+
+function logout(){
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

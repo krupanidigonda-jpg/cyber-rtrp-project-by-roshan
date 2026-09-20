@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deepfake Scam Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="morph-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>🎭 Deepfake Scam Awareness</h2>
+    <p>You receive a voice note that sounds like your relative asking urgent money transfer.</p>
+
+    <button onclick="wrong()">💵 Transfer money immediately</button>
+    <button onclick="correct()">📞 Call the real person on another number and verify</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Deepfake scams use artificial intelligence to create fake voice or video messages that look or sound real.
+        Fraudsters pretend to be family members, bosses, or friends and ask for urgent money.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Verify the request by calling the real person directly.</li>
+        <li>Use another communication channel for confirmation.</li>
+        <li>Be careful with urgent emotional requests.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not send money based only on voice/video messages.</li>
+        <li>Do not trust urgent pressure without verification.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Deepfake voice and video scams use AI to create fake urgency and trust.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Always verify money requests through a different trusted communication channel.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

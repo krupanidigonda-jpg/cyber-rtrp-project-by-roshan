@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Investment Scam Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>💰 Investment Scam Awareness</h2>
+    <p>A Telegram group says: “Invest ₹5000 today and get ₹50,000 tomorrow.”</p>
+
+    <button onclick="wrong()">💸 Invest immediately</button>
+    <button onclick="correct()">⚠️ Avoid unrealistic returns and verify platform</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Investment scams promise huge returns in a very short time.
+        Fraudsters use fake websites, Telegram groups, and social media pages to attract users.
+        Once money is invested, the scammer disappears or blocks the victim.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Verify the platform before investing.</li>
+        <li>Use only trusted financial institutions.</li>
+        <li>Be careful with guaranteed profit claims.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not trust unrealistic high returns.</li>
+        <li>Do not send money to unknown accounts.</li>
+        <li>Do not join unknown investment groups blindly.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Unrealistic profit promises are common signs of Ponzi and investment scams.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Always verify investment platforms and avoid any scheme that promises guaranteed huge profits.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

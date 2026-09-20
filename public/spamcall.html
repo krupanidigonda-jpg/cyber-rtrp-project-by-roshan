@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Call Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spam-bg">
+
+<div class="phone">
+
+<h3>Incoming Call</h3>
+
+<p class="number">+91 98765 43210</p>
+<p>Caller Name: Bank Verification Officer</p>
+
+<button onclick="answerCall()">Answer & Share Details</button>
+<button onclick="rejectCall()">Reject & Verify Official Number</button>
+
+<p id="result"></p>
+
+<button onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+function answerCall(){
+    document.getElementById("result").innerText =
+    "Fraud Alert! Banks never ask OTP or PIN on call.";
+    document.getElementById("result").style.color = "red";
+}
+
+function rejectCall(){
+    document.getElementById("result").innerText =
+    "Correct! Always verify by calling official bank customer care.";
+    document.getElementById("result").style.color = "green";
+}
+
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Profile Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fake-bg">
+
+<div class="box">
+
+<h2>Fake Police Profile Verification</h2>
+
+<p>Enter profile name you received message from:</p>
+
+<input type="text" id="profileName" placeholder="Enter Profile Name">
+
+<br>
+
+<button onclick="verifyProfile()">Verify Profile</button>
+
+<p id="result"></p>
+
+<button onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+function verifyProfile(){
+
+    let name = document.getElementById("profileName").value;
+
+    if(name.toLowerCase().includes("dsp") || name.toLowerCase().includes("si")){
+        document.getElementById("result").innerText =
+        "Warning: Many scammers use police titles in fake profiles. Verify from official government website before trusting.";
+        document.getElementById("result").style.color = "red";
+    } else {
+        document.getElementById("result").innerText =
+        "Always verify profile using official sources and never send money without confirmation.";
+        document.getElementById("result").style.color = "green";
+    }
+}
+
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

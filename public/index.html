@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cyber Aware</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="typing"></h1>
+
+<p>🔐 Interactive Cyber Security Awareness Platform</p>
+
+<button onclick="goRegister()">🚀 Register</button>
+<button onclick="goLogin()">🔑 Login</button>
+
+</div>
+
+<script>
+function goRegister(){
+    window.location.href="register.html";
+}
+function goLogin(){
+    window.location.href="login.html";
+}
+</script>
+<script>
+const text = "🛡️ CYBER AWARE SECURITY SYSTEM ⚡";
+let i = 0;
+
+function typeEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+    }
+}
+
+typeEffect();
+</script>
+</body>
+</html>

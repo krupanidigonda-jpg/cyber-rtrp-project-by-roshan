@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Job Offer Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fake-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>💼 Fake Job Offer Checker</h2>
+    <p>You get a message: “Work from home, earn ₹5000 daily. Pay ₹999 registration fee now.”</p>
+
+    <button onclick="wrong()">💳 Pay registration fee</button>
+    <button onclick="correct()">🔍 Verify company and avoid payment</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Fake job scams happen through WhatsApp, Telegram, email, and social media.
+        Fraudsters offer high salary jobs or work-from-home jobs and then ask for registration fees,
+        training fees, or personal documents.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Verify the company through official website or LinkedIn.</li>
+        <li>Check if the job is posted on trusted job portals.</li>
+        <li>Contact company HR using official contact details.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not pay money to get a job.</li>
+        <li>Do not share bank details or Aadhaar immediately.</li>
+        <li>Do not trust unrealistic salary promises.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Genuine employers usually do not ask candidates to pay registration fees to get a job.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Always verify the company through official website, LinkedIn, and trusted sources before responding.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

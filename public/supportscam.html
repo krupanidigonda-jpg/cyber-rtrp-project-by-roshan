@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Support Number Scam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fake-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>☎️ Fake Support Number Scam</h2>
+    <p>You search online for customer care and call the first number shown in a random result.</p>
+
+    <button onclick="wrong()">📞 Trust the first number and share details</button>
+    <button onclick="correct()">🌐 Use official website/app for support number</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Fake support scams happen when scammers post false customer care numbers online.
+        When victims call, the fraudster asks for OTP, bank details, or asks to install remote access apps.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Check support numbers only from official websites/apps.</li>
+        <li>Never share OTP or PIN with support staff.</li>
+        <li>Use official chat or support center only.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not trust numbers from random search results.</li>
+        <li>Do not install apps suggested by unknown support agents.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Many scammers publish fake customer care numbers to steal OTP, PIN, or remote access.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Always use support numbers from the official website or app.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

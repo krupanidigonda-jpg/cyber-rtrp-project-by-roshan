@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cyber Awareness Game</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="game-bg">
+
+<div class="container">
+<h2>Cyber Awareness Game</h2>
+
+<p id="question"></p>
+<p>Time Left: <span id="timer">60</span> seconds</p>
+<div id="options"></div>
+
+<p id="result"></p>
+
+<p id="score">Score: 0</p>
+
+<button onclick="goBack()">Back to Dashboard</button>
+</div>
+
+<script>
+let score = 0;
+let currentQuestion = 0;
+
+let timeLeft = 60;
+let timerInterval;
+
+const scenarios = [
+  {
+    difficulty: "Advanced",
+    question: "You get a WhatsApp message from a 'Cyber Crime Officer' saying your Aadhaar is linked to illegal activities and you must pay a fine immediately, otherwise arrest.",
+    options: [
+      "Pay immediately to avoid trouble",
+      "Share Aadhaar and OTP to clear verification",
+      "Ask for official ID + verify via official police website and report",
+      "Forward message to friends for advice"
+    ],
+    correct: 2,
+    correctText: "Verify the officer through official sources and report the number/message.",
+    explanation:
+      "Real police/cybercrime officers do not demand money via WhatsApp. This is a fear-based scam. Do not share OTP/Aadhaar. Save screenshots, block the contact, and report to cybercrime portal/1930 if money loss happened."
+  },
+  {
+    difficulty: "Advanced",
+    question: "You receive a UPI 'Collect Request' saying 'Refund from Bank'. If you accept, money will be debited from your account.",
+    options: [
+      "Accept collect request to receive refund",
+      "Reject request and contact bank using official app/number",
+      "Share UPI PIN to verify refund",
+      "Scan QR code sent by the person"
+    ],
+    correct: 1,
+    correctText: "Reject the collect request and verify through official bank channels.",
+    explanation:
+      "UPI Collect Requests are requests to TAKE money from you, not give you money. Bank refunds never require you to accept unknown collect requests or share UPI PIN. UPI PIN must never be shared with anyone."
+  },
+  {
+    difficulty: "Advanced",
+    question: "A caller says 'Your SIM will be blocked in 30 minutes. Press 1 to talk to support.' Then they ask you to install AnyDesk/TeamViewer.",
+    options: [
+      "Install AnyDesk/TeamViewer to fix quickly",
+      "Share OTP to unblock SIM",
+      "Refuse, disconnect call, and contact operator via official number/app",
+      "Give remote access and open banking app"
+    ],
+    correct: 2,
+    correctText: "Disconnect and contact the telecom operator via official channels.",
+    explanation:
+      "Remote access apps (AnyDesk/TeamViewer) allow scammers to control your phone and steal OTP/UPI/bank access. Telecom operators do not block SIM like this via random calls. Always verify using official app/number."
+  },
+  {
+    difficulty: "Advanced",
+    question: "You get an email: 'Your parcel is held at customs. Pay ₹49 to release.' The link opens a payment page with a strange URL and spelling mistakes.",
+    options: [
+      "Pay ₹49 quickly",
+      "Click link and enter card details",
+      "Check official courier website/app using tracking ID, do not use link",
+      "Reply to email with your address and phone"
+    ],
+    correct: 2,
+    correctText: "Do not use the link; verify via official courier site/app.",
+    explanation:
+      "Small-payment scams steal your card details. Fake pages often have wrong URL/spelling. Always open courier website/app directly and check tracking there. Never trust random payment links."
+  },
+  {
+    difficulty: "Advanced",
+    question: "You receive a video call from an unknown person. They record your reaction and later threaten: 'Pay or we will upload your video.'",
+    options: [
+      "Pay money so they delete it",
+      "Keep chatting to convince them",
+      "Block immediately, save proof, report and do not pay",
+      "Share social media password to prove identity"
+    ],
+    correct: 2,
+    correctText: "Block, save evidence, report immediately. Never pay.",
+    explanation:
+      "This is sextortion/blackmail. Paying increases demands. Save screenshots, block contact, inform trusted person, report on cybercrime portal. Tighten privacy settings."
+  }
+];
+
+function loadQuestion() {
+  if (currentQuestion >= scenarios.length) {
+    document.getElementById("question").innerText = "✅ Game Over!";
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("result").innerHTML = `<div class="feedback correct-box">Final Score: ${score}</div>`;
+    return;
+  }
+
+  // TIMER RESET
+  timeLeft = 60;
+  document.getElementById("timer").innerText = timeLeft;
+  clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    document.getElementById("timer").innerText = timeLeft;
+
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+      showFeedback(false, scenarios[currentQuestion]);
+      currentQuestion++;
+      setTimeout(loadQuestion, 1800);
+    }
+  }, 1000);
+
+  let q = scenarios[currentQuestion];
+  document.getElementById("question").innerText = `(${q.difficulty}) ${q.question}`;
+
+  let buttons = "";
+  q.options.forEach((option, index) => {
+    buttons += `<button onclick="checkAnswer(${index})">${option}</button>`;
+  });
+
+  document.getElementById("options").innerHTML = buttons;
+  document.getElementById("result").innerHTML = "";
+}
+
+function showFeedback(isCorrect, qObj) {
+  if (isCorrect) {
+    document.getElementById("result").innerHTML =
+      `<div class="feedback correct-box">✅ Correct!<br><b>Why:</b> ${qObj.explanation}</div>`;
+  } else {
+    document.getElementById("result").innerHTML =
+      `<div class="feedback wrong-box">❌ Wrong!<br><b>Correct Action:</b> ${qObj.correctText}<br><b>Explanation:</b> ${qObj.explanation}</div>`;
+  }
+}
+
+function checkAnswer(selected) {
+  clearInterval(timerInterval);
+
+  let qObj = scenarios[currentQuestion];
+  if (selected === qObj.correct) {
+    score += 10;
+    document.getElementById("score").innerText = "Score: " + score;
+    showFeedback(true, qObj);
+  } else {
+    showFeedback(false, qObj);
+  }
+
+  currentQuestion++;
+  setTimeout(loadQuestion, 1800);
+}
+
+function goBack() {
+  window.location.href = "dashboard.html";
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>

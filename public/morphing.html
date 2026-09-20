@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Morphing Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="morph-bg">
+
+<div class="box">
+
+<h2>🖼️ Photo Morphing & Blackmail Awareness ⚠️</h2>
+
+<p>
+You receive a message saying:  
+"We have morphed your photo. Send money or we will share it publicly."
+</p>
+
+<button onclick="panic()">Send Money</button>
+<button onclick="safeAction()">Do Not Pay & Report Immediately</button>
+
+<p id="result"></p>
+
+<h3>Correct Action Steps:</h3>
+<ul>
+<li>Do not panic</li>
+<li>Do not pay money</li>
+<li>Take screenshots as evidence</li>
+<li>Block the person</li>
+<li>Report to cybercrime portal</li>
+</ul>
+
+<button onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+function panic(){
+    document.getElementById("result").innerText =
+    "Wrong Action! Paying money encourages criminals and they may demand more.";
+    document.getElementById("result").style.color = "red";
+}
+
+function safeAction(){
+    document.getElementById("result").innerText =
+    "Correct! Never pay blackmail. Report immediately to authorities.";
+    document.getElementById("result").style.color = "green";
+}
+
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

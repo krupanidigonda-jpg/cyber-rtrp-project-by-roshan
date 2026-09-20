@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+<h2>Leaderboard</h2>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody id="leaderboardBody">
+</tbody>
+</table>
+
+<br>
+<button onclick="goBack()">Back to Dashboard</button>
+
+</div>
+
+<script>
+
+let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+leaderboard.sort((a, b) => b.score - a.score);
+
+let tableBody = document.getElementById("leaderboardBody");
+
+leaderboard.forEach(user => {
+    let row = `<tr>
+        <td>${user.name}</td>
+        <td>${user.score}</td>
+    </tr>`;
+    tableBody.innerHTML += row;
+});
+
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+
+</script>
+
+</body>
+</html>

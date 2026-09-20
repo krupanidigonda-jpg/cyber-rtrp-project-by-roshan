@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Link Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>🔗 Phishing Link Detector</h2>
+    <p>You receive this link in SMS:</p>
+    <p><b>www.paytm-secure-login-check.in</b></p>
+
+    <button onclick="wrong()">✅ Open the link and login</button>
+    <button onclick="correct()">🔍 Check official website/app directly</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Phishing scams happen when attackers send fake links through SMS, email, or social media.
+        These links look similar to official websites such as banks, payment apps, or shopping sites.
+        When the user clicks the link and enters login details, the attacker steals that information.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Check the website URL carefully before opening it.</li>
+        <li>Use official apps or type the website manually in browser.</li>
+        <li>Look for spelling mistakes or unusual domain names.</li>
+        <li>Enable two-factor authentication whenever possible.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not click unknown links sent in SMS or WhatsApp.</li>
+        <li>Do not enter passwords on suspicious websites.</li>
+        <li>Do not trust urgent messages asking for login or payment.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! This may be a phishing website. Fake URLs often use extra words and unusual domains to steal passwords.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Always open the official app or official website directly instead of trusting random links.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

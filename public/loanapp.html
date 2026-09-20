@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Loan App Fraud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spam-bg">
+
+<div class="header">🛡️ CYBER AWARE SECURITY SYSTEM ⚡</div>
+
+<div class="container">
+    <h2>📱 Fake Loan App Fraud</h2>
+    <p>A loan app promises instant money and asks for full contact and gallery access.</p>
+
+    <button onclick="wrong()">📥 Install app and allow everything</button>
+    <button onclick="correct()">🛑 Avoid unknown apps and use trusted apps only</button>
+
+    <p id="result"></p>
+    <div class="info-box">
+    <h3>📌 How this scam occurs</h3>
+    <p>
+        Fake loan apps attract victims by offering instant loans with very little documentation.
+        After installation, they ask for access to contacts, photos, and files. Later,
+        scammers misuse this data for harassment and blackmail.
+    </p>
+
+    <h3>✅ Safety steps</h3>
+    <ul>
+        <li>Install apps only from official app stores.</li>
+        <li>Check app reviews and developer details.</li>
+        <li>Read app permissions carefully.</li>
+    </ul>
+
+    <h3>❌ What not to do</h3>
+    <ul>
+        <li>Do not install unknown APK files.</li>
+        <li>Do not allow contact or gallery access unnecessarily.</li>
+        <li>Do not trust loan apps with no proper company details.</li>
+    </ul>
+</div>
+    <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<div class="footer">© 2026 Cyber Aware | Group 2</div>
+
+<script>
+function wrong(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback wrong-box">❌ Wrong! Fake loan apps may steal contacts, photos, and use them for harassment and blackmail.</div>`;
+}
+function correct(){
+    document.getElementById("result").innerHTML =
+    `<div class="feedback correct-box">✅ Correct! Use only trusted financial apps from official stores and review permissions carefully.</div>`;
+}
+function goBack(){
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
